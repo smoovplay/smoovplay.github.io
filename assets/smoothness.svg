@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 232" width="880" height="232">
+<title>Same motion at 30 frames a second, and at 60, 90 or 120</title>
+<style>
+.dot { animation: run 1.8s infinite alternate; }
+.f30 { animation-timing-function: steps(54, end); }
+.f90 { animation-timing-function: steps(216, end); }
+@keyframes run { from { transform: translateX(0px); } to { transform: translateX(586px); } }
+@media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
+</style>
+<rect x="0.5" y="0.5" width="879" height="231" rx="18" fill="#0C0E12" stroke="#252B35"/>
+<text x="28" y="44" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#8E949F">SAME MOTION, TWO FRAME RATES</text>
+<text x="852" y="44" text-anchor="end" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#8E949F">LIVE</text>
+<circle cx="808" cy="40" r="4" fill="#FFB02E"/>
+<text x="28" y="96" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#F3EFE8">Your console</text>
+<text x="28" y="116" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace" font-size="12.5" letter-spacing="1" fill="#C3C6CD">30 FPS</text>
+<rect x="222" y="75" width="630" height="46" rx="23" fill="#161A21" stroke="#252B35"/>
+<g stroke="#252B35" stroke-width="1.5"><line x1="262" y1="92" x2="262" y2="104"/><line x1="302" y1="92" x2="302" y2="104"/><line x1="342" y1="92" x2="342" y2="104"/><line x1="382" y1="92" x2="382" y2="104"/><line x1="422" y1="92" x2="422" y2="104"/><line x1="462" y1="92" x2="462" y2="104"/><line x1="502" y1="92" x2="502" y2="104"/><line x1="542" y1="92" x2="542" y2="104"/><line x1="582" y1="92" x2="582" y2="104"/><line x1="622" y1="92" x2="622" y2="104"/><line x1="662" y1="92" x2="662" y2="104"/><line x1="702" y1="92" x2="702" y2="104"/><line x1="742" y1="92" x2="742" y2="104"/><line x1="782" y1="92" x2="782" y2="104"/><line x1="822" y1="92" x2="822" y2="104"/></g>
+<g class="dot f30"><circle cx="244" cy="98" r="12.5" fill="#DDE3EC"/></g>
+<text x="28" y="160" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#FFB02E">SmoovPlay</text>
+<text x="28" y="180" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace" font-size="12.5" letter-spacing="1" fill="#FFB02E">60 · 90 · 120 FPS</text>
+<rect x="222" y="139" width="630" height="46" rx="23" fill="#161A21" stroke="#252B35"/>
+<g stroke="#252B35" stroke-width="1.5"><line x1="262" y1="156" x2="262" y2="168"/><line x1="302" y1="156" x2="302" y2="168"/><line x1="342" y1="156" x2="342" y2="168"/><line x1="382" y1="156" x2="382" y2="168"/><line x1="422" y1="156" x2="422" y2="168"/><line x1="462" y1="156" x2="462" y2="168"/><line x1="502" y1="156" x2="502" y2="168"/><line x1="542" y1="156" x2="542" y2="168"/><line x1="582" y1="156" x2="582" y2="168"/><line x1="622" y1="156" x2="622" y2="168"/><line x1="662" y1="156" x2="662" y2="168"/><line x1="702" y1="156" x2="702" y2="168"/><line x1="742" y1="156" x2="742" y2="168"/><line x1="782" y1="156" x2="782" y2="168"/><line x1="822" y1="156" x2="822" y2="168"/></g>
+<g class="dot f90"><circle cx="244" cy="162" r="21" fill="#FFB02E" opacity="0.18"/><circle cx="244" cy="162" r="12.5" fill="#FFB02E"/></g>
+<text x="28" y="210" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13.5" fill="#8E949F">The top dot moves 30 times a second, like a 30 fps game. The bottom one moves 60, 90 or 120 times, as fast as your screen.</text>
+</svg>

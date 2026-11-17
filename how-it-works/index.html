@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How SmoovPlay works, and FAQ</title>
+<!-- Unlisted for now: search engines skip this page. Delete the robots line when it should be found. -->
+<meta name="robots" content="noindex">
+<meta name="description" content="How SmoovPlay turns a 30 fps console stream into 60, 90 or up to 120 fps on your PC, where the delay goes, what you need, and answers to common questions.">
+<meta property="og:title" content="How SmoovPlay works, and FAQ">
+<meta property="og:description" content="From your console to 60, 90 or up to 120 fps: the steps, the delay, what you need, and the FAQ.">
+<meta property="og:image" content="https://smoovplay.github.io/compare/media/poster90.jpg">
+<meta property="og:url" content="https://smoovplay.github.io/how-it-works/">
+<meta name="theme-color" content="#0b0d11">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <div class="in">
+    <a class="brand" href="../"><img src="../assets/icon.svg" alt="">SmoovPlay</a>
+    <nav class="nav" aria-label="Site">
+      <a href="./" aria-current="page">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://smoovplay.github.io/compare/">Comparisons</a>
+      <a href="https://github.com/smoovplay/smoovplay">GitHub</a>
+    </nav>
+    <a class="get sm" data-get href="https://github.com/smoovplay/smoovplay/releases/latest/download/SmoovPlay-Setup.exe">Try it now</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="in">
+      <div class="copy">
+        <div class="eyebrow">How it works</div>
+        <h1>From your console to <em>60, 90 or up to 120&nbsp;fps</em></h1>
+        <p class="lede">Your console streams to your PC over your home network. On the way to your screen, your graphics card draws new frames between the ones the game sends, and scales the picture to fit.</p>
+        <p class="meta"><a href="#chain">The steps</a><span class="dot">·</span><a href="#delay">The delay</a><span class="dot">·</span><a href="#get-started">Get started</a><span class="dot">·</span><a href="#keys">Keys</a><span class="dot">·</span><a href="#good-to-know">Good to know</a><span class="dot">·</span><a href="#faq">FAQ</a></p>
+      </div>
+      <figure>
+        <img src="../assets/smoothness.svg" width="880" height="232" alt="Two dots cross the same track. The top one, labelled Your console, moves 30 times a second, like a 30 fps game; the bottom one moves 60, 90 or 120 times a second, as fast as your screen shows SmoovPlay.">
+        <figcaption>The same motion at 30 frames a second, and as SmoovPlay shows it. Your screen's refresh rate sets how smooth the lower dot can look.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec band" id="chain" aria-labelledby="chain-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">The steps</div>
+        <h2 id="chain-h">Six steps, a few milliseconds each</h2>
+        <p>With a PS5, the tested setup, the console and the PC talk the way Sony's Remote Play app does. With an Xbox app window or a capture card (Experimental), the frames come from the captured window or the card instead, and the rest is the same.</p>
+      </div>
+      <ol class="chain">
+        <li><span class="where">Console</span><h3>It streams the game</h3><p>A PS5 sends Remote Play over Ethernet or 5 GHz Wi-Fi. Nothing is installed on it.</p><span class="t">1080p</span></li>
+        <li><span class="where">PC · processor</span><h3>chiaki-ng receives it</h3><p>The open-source Remote Play app plays the sound and sends your buttons back. Its frame tap hands each frame to SmoovPlay.</p><span class="t">Sound held back to stay in step</span></li>
+        <li><span class="where">PC · graphics card</span><h3>Decode, skip repeats</h3><p>The video decoder unpacks each frame. Repeated frames and scene cuts are found, so they aren't blended.</p><span class="t">30 new frames a second</span></li>
+        <li><span class="where">PC · graphics card</span><h3>Draw the in-betweens</h3><p>RIFE 4.22 lite, through NVIDIA TensorRT, draws 1, 2 or 3 frames between each pair of real ones.</p><span class="t">About 9 ms each</span></li>
+        <li><span class="where">PC · graphics card</span><h3>Sharpen and scale</h3><p>AMD FSR 1 or NVIDIA RTX Video Super Resolution fits the 1080p picture to your monitor.</p><span class="t">FSR 1 in 0.1 ms</span></li>
+        <li><span class="where">Screen</span><h3>Show every frame</h3><p>Frames go out at your screen's refresh rate: 60, 90 or up to 120 a second.</p><span class="t">One every 11.1 ms at 90 fps</span></li>
+      </ol>
+      <figure>
+        <div class="pan"><img src="../assets/setup.svg" width="1148" height="848" alt="Desk setup. The PS5 connects by Ethernet to the router, which connects to the PC: the Remote Play stream comes in that way and button presses go back. The controller connects to the PC. The PC's DisplayPort output sends 90 or 120 frames a second to the screen. Inside the PC: the network port receives 30 new frames a second; chiaki-ng on the processor unpacks the stream, plays the sound and sends your buttons; on the graphics card (here an NVIDIA RTX card) the video decoder unpacks each frame and skips repeats, the AI cores draw two in-between frames, about 9 ms each, the shader cores scale the picture with AMD FSR 1 in 0.1 ms, and the display output sends a frame every 11.1 ms at 90 fps."></div>
+        <figcaption>The tested setup on a desk: a PS5 wired to the router, the controller on the PC, and SmoovPlay at 90 fps.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="frames-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">At 90 fps</div>
+        <h2 id="frames-h">Two AI frames for every real one</h2>
+        <p>Each AI frame is drawn from the real frames on both sides of it. At 60 fps there's one between each pair of real ones, and at 120 fps three.</p>
+      </div>
+      <figure>
+        <div class="pan"><img src="../assets/frames.svg" width="880" height="330" alt="Timeline over 133 ms. From your console: four real frames, A to D, each lasting 33 ms. On your screen: twelve frames, each 11 ms. Every third one is real (A, B, C, D) and the two between are AI frames drawn from the real frames on both sides."></div>
+        <figcaption>133 ms at 90 fps: four real frames from your console, twelve on your screen.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec band" id="delay" aria-labelledby="delay-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">The delay</div>
+        <h2 id="delay-h">About 36&nbsp;ms at 90&nbsp;fps, and where it goes</h2>
+        <p>SmoovPlay adds about 36 ms at 90 fps (about 20 ms at 60) on top of Remote Play's own delay. Motion gets smoother, but the game still responds like 30 fps, a little later than without it.</p>
+      </div>
+      <div class="delay">
+        <div class="track" role="img" aria-label="About 36 ms at 90 fps: about 22 ms holding each real frame back, and about 14 ms decoding, drawing, scaling and showing">
+          <span class="hold" style="flex:22">Holding back · 22 ms</span>
+          <span class="work" style="flex:14">The rest · 14 ms</span>
+        </div>
+        <div class="legend">
+          <div class="h"><i></i><b>Holding each real frame back.</b> Every frame generator waits like this: a real frame can only go on screen after the in-between frames that come before it.</div>
+          <div class="w"><i></i><b>Decoding, drawing, scaling and showing.</b> The work itself, on the graphics card.</div>
+        </div>
+      </div>
+      <ul class="notes">
+        <li><b>Measure yours</b>Press <kbd>L</kbd> in the video window: SmoovPlay presses a button through chiaki-ng and times how long the PS5 takes to show it.</li>
+        <li><b>Sound stays in step</b>chiaki-ng holds the sound back by as long as the picture spends in SmoovPlay.</li>
+        <li><b>Lowest delay</b>Fullscreen (<kbd>F</kbd>) is quickest, and 60 fps adds the least.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="get-started" aria-labelledby="start-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">Get started</div>
+        <h2 id="start-h">Three steps, under half an hour, once</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Install</h3><p>Run <code>SmoovPlay-Setup.exe</code>. It checks your PC, helps fix anything that's off, downloads the AI runtime from official sources and tunes itself to your graphics card.</p><span class="t">10 to 20 minutes · no admin rights</span></li>
+        <li><h3>Connect your console</h3><p>For a PS5, follow <strong>Connect your PS5</strong> in the app: turn on Remote Play, sign in to PSN in chiaki-ng and register the console. For an Xbox or a capture card (Experimental), pick <strong>App window</strong> or <strong>Capture card</strong> on the Play page.</p><span class="t">About 5 minutes, once</span></li>
+        <li><h3>Play</h3><p>Press <strong>Play</strong>. In the video window, <kbd>M</kbd> opens every setting, live, and <kbd>F</kbd> goes fullscreen.</p><span class="t">60, 90 or up to 120 fps</span></li>
+      </ol>
+      <div class="tbl kv">
+        <table>
+          <thead><tr><th scope="col">You need</th><th scope="col"></th></tr></thead>
+          <tbody>
+            <tr><th scope="row">PC</th><td>Windows 10 or 11 (64-bit), 8 GB of memory, 12 GB free during setup</td></tr>
+            <tr><th scope="row">Graphics card</th><td>NVIDIA GeForce RTX 30, 40 or 50 series. <span class="xp">Experimental</span> AMD Radeon and Intel Arc.</td></tr>
+            <tr><th scope="row">Console</th><td>A PS5 with Remote Play turned on. <span class="xp">Experimental</span> A console through a capture card, or a game streamed to an app on this PC.</td></tr>
+            <tr><th scope="row">Network</th><td>Ethernet for the console and the PC, or 5 GHz Wi-Fi (not needed with a capture card)</td></tr>
+            <tr><th scope="row">Screen</th><td>Any: 60 Hz gets 60 fps, 90 Hz gets 90, 120 Hz or faster gets up to 120. G-Sync or FreeSync helps.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <details id="smartscreen">
+        <summary>Windows says "Windows protected your PC"</summary>
+        <div class="a">
+          <p>SmoovPlay isn't code-signed yet, and Windows' SmartScreen warns about new programs that have no download history. So the first time, you get past two warnings:</p>
+          <ol>
+            <li><strong>Your browser</strong> may say the file isn't commonly downloaded. Choose to keep it. In Edge: <strong>⋯</strong> → <strong>Keep</strong> → <strong>Show more</strong> → <strong>Keep anyway</strong>.</li>
+            <li><strong>Windows</strong> says "Windows protected your PC" when you run it. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+          </ol>
+          <p>Setup installs for your Windows user only, so it never asks for admin rights. To be sure you have the real file, download it only from SmoovPlay's <a href="https://github.com/smoovplay/smoovplay/releases">Releases</a> page and compare its SHA-256 with the one listed there (<code>Get-FileHash .\SmoovPlay-Setup.exe</code> in PowerShell). Updates from inside the app must carry SmoovPlay's signature before they run.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="sec band" id="keys" aria-labelledby="keys-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">While you play</div>
+        <h2 id="keys-h">Keys in the video window</h2>
+        <p>Settings apply as you play. Your controller plays the game; the keyboard runs SmoovPlay.</p>
+      </div>
+      <div class="tbl kv">
+        <table>
+          <tbody>
+            <tr><th scope="row"><kbd>M</kbd></th><td>Menu: every setting, live</td></tr>
+            <tr><th scope="row"><kbd>F</kbd></th><td>Fullscreen, for the lowest delay</td></tr>
+            <tr><th scope="row"><kbd>I</kbd></th><td>Frame generation off and on, to compare</td></tr>
+            <tr><th scope="row"><kbd>R</kbd> · <kbd>B</kbd></th><td>Save the instant replay · a before &amp; after video (<kbd>Ctrl+Alt+R</kbd> · <kbd>Ctrl+Alt+B</kbd> from any window)</td></tr>
+            <tr><th scope="row"><kbd>K</kbd> · <kbd>J</kbd></th><td>Look off and on · next look (<kbd>Shift+J</kbd> goes back)</td></tr>
+            <tr><th scope="row"><kbd>S</kbd> · <kbd>U</kbd></th><td>Stats overlay (off, minimal, detailed) · next upscaler</td></tr>
+            <tr><th scope="row"><kbd>L</kbd></th><td>Delay test (PS5 Remote Play)</td></tr>
+            <tr><th scope="row"><kbd>Esc</kbd> or <kbd>Q</kbd></th><td>Stop</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="good-to-know" aria-labelledby="know-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">Good to know</div>
+        <h2 id="know-h">What to expect</h2>
+      </div>
+      <ul class="notes">
+        <li><b>Smoother, not faster</b>Great for driving, exploring and story missions; not for competitive online play.</li>
+        <li><b>1080p</b>Remote Play arrives at 1080p, so the picture is a little softer than HDMI straight from the console.</li>
+        <li><b>Some wobble</b>HUD text over fast motion, very fast camera turns and thin objects crossing can wobble a little. Press <kbd>I</kbd> to compare.</li>
+        <li><b>60 fps games pass through</b>There are no gaps to fill. Try one anyway with <strong>Test with a 60 fps game</strong> on the Play page.</li>
+        <li><b>Games between 40 and 60 fps</b>They stutter over a 60 Hz stream. <strong>Even out 40-60 fps</strong> (Experimental, on by default) spaces their frames evenly, for about 17 ms more delay.</li>
+        <li><b>One frame generator at a time</b>Leave NVIDIA Smooth Motion, AMD Fluid Motion Frames and Lossless Scaling off for SmoovPlay and chiaki-ng. Other games aren't affected.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec band" id="faq" aria-labelledby="faq-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">FAQ</div>
+        <h2 id="faq-h">Questions people ask</h2>
+      </div>
+      <div class="faq">
+        <details id="free">
+          <summary>Is it really free?</summary>
+          <div class="a"><p>Yes. SmoovPlay is free and open source under the MIT licence, with no account, ads or tracking. It only talks to GitHub, to check for new versions. The source is all on <a href="https://github.com/smoovplay/smoovplay">GitHub</a>.</p></div>
+        </details>
+        <details id="console">
+          <summary>Does it change anything on my PS5?</summary>
+          <div class="a"><p>No. Nothing is installed on the console. Your PC receives the Remote Play stream the way Sony's own Remote Play app does, through chiaki-ng, a free, unofficial Remote Play app. You sign in to PSN once in chiaki-ng to register the console, as you would in Sony's app.</p></div>
+        </details>
+        <details id="responsive">
+          <summary>Will games feel more responsive?</summary>
+          <div class="a"><p>No. The extra frames are generated: motion gets smoother, but the game still responds like 30 fps, and <a href="#delay">a little later</a> than without SmoovPlay. That's why it suits driving, exploring and story games more than competitive online play.</p></div>
+        </details>
+        <details id="black">
+          <summary>The picture stays black, or the PS5 says the content can't be shown</summary>
+          <div class="a"><p>Turn off HDCP on the PS5: <strong>Settings → System → HDMI</strong>, turn off <strong>Enable HDCP</strong>, then connect again. Turn it back on for video apps like Netflix when you're done. Still black? Press <kbd>Q</kbd>, then <strong>Help → Copy diagnostics</strong>, and paste it into an <a href="https://github.com/smoovplay/smoovplay/issues">issue</a>.</p></div>
+        </details>
+        <details id="amd">
+          <summary>Does it work with AMD or Intel graphics cards?</summary>
+          <div class="a"><p>Yes, as an Experimental option, through DirectML on any DirectX 12 card; Radeon RX 6000, 7000 and 9000 and Intel Arc are the ones to try. It draws the same frames as the NVIDIA engine, about 1.7 times more slowly, so expect 60 fps, and 90 on a fast card. It hasn't met a game on a real AMD or Intel card yet: press <strong>Send feedback</strong> on the Help page after playing.</p></div>
+        </details>
+        <details id="xbox">
+          <summary>Does it work with Xbox, Switch or a capture card?</summary>
+          <div class="a"><p>As Experimental options. For any console with HDMI, pick <strong>Capture card</strong> on the Play page. For Xbox, pick <strong>App window</strong>: SmoovPlay captures the window of the app you stream with (the Xbox app, Sony's PS Remote Play app, Moonlight or a cloud game in a browser) and shows the smooth picture over it. Neither has been tried with the real thing yet, so please <a href="https://github.com/smoovplay/smoovplay/issues">send feedback</a>.</p></div>
+        </details>
+        <details id="dlss">
+          <summary>How is this different from DLSS Frame Generation or Lossless Scaling?</summary>
+          <div class="a"><p>DLSS Frame Generation is built for PC games: it uses the motion data the game engine provides. A video stream doesn't carry that, so SmoovPlay uses RIFE, which works out the motion from the frames themselves. Lossless Scaling is great and works on any window. SmoovPlay is free and open source, takes frames straight from chiaki-ng's decoder instead of capturing the screen, and walks you through connecting your console.</p></div>
+        </details>
+        <details id="sixty">
+          <summary>What about 60 fps games?</summary>
+          <div class="a"><p>They pass through unchanged: there are no gaps to fill. To see what SmoovPlay does anyway, press <strong>Test with a 60 fps game</strong> on the Play page. It leaves out every other frame, so the game arrives like a 30 fps one, fills the gaps as usual, and scores each AI frame against the real frame it replaced.</p></div>
+        </details>
+        <details id="download">
+          <summary>What does setup download?</summary>
+          <div class="a"><p>About 5 GB: Python, PyTorch and NVIDIA TensorRT, each from its official source. It costs nothing, and sends nothing about you.</p></div>
+        </details>
+        <details id="updates">
+          <summary>How do updates work?</summary>
+          <div class="a"><p>SmoovPlay checks GitHub for new versions itself and updates in one click. An update must carry SmoovPlay's signature before it runs.</p></div>
+        </details>
+        <details id="vfg">
+          <summary>What is NVIDIA VFG?</summary>
+          <div class="a"><p>An optional second AI model for RTX 40 and 50 series cards: NVIDIA's own Video Frame Generation. It isn't part of SmoovPlay. <strong>Set up NVIDIA VFG</strong> on the Settings page downloads it from NVIDIA, only once you accept NVIDIA's licence.</p></div>
+        </details>
+        <details id="apps">
+          <summary>Can another app send its frames to SmoovPlay?</summary>
+          <div class="a"><p>Yes, as an Experimental option for developers: the <a href="https://github.com/smoovplay/smoovplay/blob/main/docs/frame-tap.md">frame tap</a>, the shared memory chiaki-ng sends Remote Play's frames through, takes decoded frames from any app. Pick <strong>Frame tap</strong> on the Play page.</p></div>
+        </details>
+        <details id="ai">
+          <summary>Was AI used to build it?</summary>
+          <div class="a"><p>Yes. It was written with a lot of help from AI coding tools, which is part of why all of it is there to read. The heavy lifting is done by established open-source projects: chiaki-ng for Remote Play, RIFE for the in-between frames and AMD FSR 1 for scaling.</p></div>
+        </details>
+        <details id="help">
+          <summary>Something isn't working. Where do I report it?</summary>
+          <div class="a"><p>In <a href="https://github.com/smoovplay/smoovplay/issues">Issues</a> on GitHub. In the app, <strong>Help → Copy diagnostics</strong> copies your PC and settings details: paste them in with the game and what happened. Reports from new graphics cards, games and setups help the most right now.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="try-h">
+    <div class="in">
+      <div class="call">
+        <div class="eyebrow">Try it now</div>
+        <h2 id="try-h">Your console, smoother on your PC</h2>
+        <p>Free for Windows 10 and 11, with an NVIDIA RTX 30, 40 or 50 series card.</p>
+        <div class="ctas">
+          <a class="get" data-get href="https://github.com/smoovplay/smoovplay/releases/latest/download/SmoovPlay-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>Try it now, free</a>
+          <a class="ghost" href="https://smoovplay.github.io/compare/"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l12.5-7.5z"/></svg>Watch at full frame rate</a>
+        </div>
+        <p class="meta"><span data-version>Latest version</span><span class="dot">·</span><a href="https://github.com/smoovplay/smoovplay/releases/latest">What's new</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="next" id="next" role="status" hidden>
+  <b>Your download is starting</b>
+  <p>Run <code>SmoovPlay-Setup.exe</code>. It isn't code-signed yet, so Windows may say "Windows protected your PC": click <strong>More info</strong>, then <strong>Run anyway</strong>. <a href="#smartscreen">More on this</a></p>
+  <button type="button" class="x" aria-label="Close">✕</button>
+</div>
+
+<footer class="foot">
+  <div class="in">
+    <nav class="links" aria-label="More">
+      <a href="../">Home</a>
+      <a href="https://smoovplay.github.io/compare/">Comparisons</a>
+      <a href="https://github.com/smoovplay/smoovplay">Source code</a>
+      <a href="https://github.com/smoovplay/smoovplay/releases">Releases</a>
+      <a href="https://github.com/smoovplay/smoovplay/issues">Report a problem</a>
+    </nav>
+    <p>SmoovPlay is an independent, free and open-source project (MIT licence), not affiliated with or endorsed by Sony, Microsoft, NVIDIA, AMD or Intel. Their names are used only to say what SmoovPlay works with. RIFE, chiaki-ng and AMD FSR 1 are the work of their own authors, under their own licences.</p>
+  </div>
+</footer>
+</body>
+</html>

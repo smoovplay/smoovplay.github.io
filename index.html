@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SmoovPlay: your console, smoother on your PC</title>
+<!-- Unlisted for now: search engines skip this page. Delete the robots line when it should be found. -->
+<meta name="robots" content="noindex">
+<meta name="description" content="SmoovPlay streams your console to your PC and draws new frames between the game's own, live: a 30 fps game plays at 60, 90 or up to 120 fps. Free and open source, for Windows.">
+<meta property="og:title" content="SmoovPlay: your console, smoother on your PC">
+<meta property="og:description" content="Play 30 fps console games at 60, 90 or up to 120 fps on your PC, with real-time AI frame generation and upscaling. Free and open source.">
+<meta property="og:image" content="https://smoovplay.github.io/compare/media/poster90.jpg">
+<meta property="og:url" content="https://smoovplay.github.io/">
+<meta name="theme-color" content="#0b0d11">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <div class="in">
+    <a class="brand" href="./" aria-current="page"><img src="assets/icon.svg" alt="">SmoovPlay</a>
+    <nav class="nav" aria-label="Site">
+      <a href="how-it-works/">How it works</a>
+      <a href="how-it-works/#faq">FAQ</a>
+      <a href="https://smoovplay.github.io/compare/">Comparisons</a>
+      <a href="https://github.com/smoovplay/smoovplay">GitHub</a>
+    </nav>
+    <a class="get sm" data-get href="https://github.com/smoovplay/smoovplay/releases/latest/download/SmoovPlay-Setup.exe">Try it now</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="in">
+      <div class="copy">
+        <div class="eyebrow">Free · open source · for Windows</div>
+        <h1>Your console. Your GPU. <em>Smoother gameplay.</em></h1>
+        <p class="lede">SmoovPlay streams your console to your PC, where your graphics card draws new frames between the ones the game sends, live. A 30 fps game plays at 60, 90 or up to 120 fps to match your screen, sharpened to fit it.</p>
+        <div class="ctas">
+          <a class="get" data-get href="https://github.com/smoovplay/smoovplay/releases/latest/download/SmoovPlay-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>Try it now, free</a>
+          <a class="ghost" href="https://smoovplay.github.io/compare/"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l12.5-7.5z"/></svg>Watch at full frame rate</a>
+        </div>
+        <p class="meta">Windows 10 and 11<span class="dot">·</span>NVIDIA RTX 30, 40 or 50 series<span class="dot">·</span><span data-version>Latest version</span><span class="dot">·</span><a href="https://github.com/smoovplay/smoovplay/releases/latest">What's new</a></p>
+      </div>
+
+      <div class="film" id="film">
+        <video muted loop playsinline preload="none" poster="https://smoovplay.github.io/compare/media/poster60.jpg" aria-label="A 30 fps Remote Play stream left of the line, and SmoovPlay's smoother output right of it"></video>
+        <button type="button" class="big" aria-label="Play the clip" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l12.5-7.5z"/></svg></button>
+        <button type="button" class="toggle" aria-label="Play the clip"></button>
+      </div>
+      <div class="under">
+        <span>Left of the line: the 30 fps stream. Right of it: <b>SmoovPlay</b>.</span>
+        <span id="hz" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" aria-labelledby="what-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">What it does</div>
+        <h2 id="what-h">Every frame your console sends, and the ones in between</h2>
+        <p>Console games often run at 30 fps, while your monitor can show 60, 90 or 120 pictures a second. SmoovPlay fills the gaps with frames drawn by AI from the real ones on either side, as you play.</p>
+      </div>
+      <div class="nums">
+        <div class="num"><b>4<small>×</small></b><span>Up to four times the frames: 30 fps becomes 60, 90 or up to 120.</span></div>
+        <div class="num"><b>9<small>ms</small></b><span>To draw each new frame, on an RTX 4070 Ti SUPER.</span></div>
+        <div class="num"><b>0</b><span>Things to install on your console. Your controller connects to the PC.</span></div>
+        <div class="num"><b>$0</b><span>Free and open source (MIT). No account, ads or tracking.</span></div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">RIFE 4.22 lite</span>
+          <h3>New frames, live</h3>
+          <p>An open-source AI model draws 1, 2 or 3 frames between each pair the game sends, so the motion keeps up with your 60, 90 or 120 Hz screen.</p>
+        </article>
+        <article class="card">
+          <span class="tag">FSR 1 · RTX VSR</span>
+          <h3>Sharper on big screens</h3>
+          <p>The 1080p stream is sharpened and scaled to your monitor by AMD FSR 1, in 0.1 ms, or NVIDIA RTX Video Super Resolution.</p>
+        </article>
+        <article class="card">
+          <span class="tag">R · B</span>
+          <h3>Instant replay</h3>
+          <p>Press R to save the last 30 seconds to 5 minutes as an MP4, at the frame rate you see, with the game's sound. B saves a before &amp; after video.</p>
+        </article>
+        <article class="card">
+          <span class="tag">14 looks</span>
+          <h3>Looks</h3>
+          <p>Restyle the picture as you play, from Golden hour to Noir, or stack your own effects and share them as a short code.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Your home network</span>
+          <h3>Works with what you have</h3>
+          <p>A PS5 streams over Remote Play, through the open-source chiaki-ng. An Xbox through its app, or any console through a capture card, are Experimental options.</p>
+        </article>
+        <article class="card">
+          <span class="tag">1 installer</span>
+          <h3>Set up once, then it updates itself</h3>
+          <p>Setup checks your PC, downloads the AI runtime from official sources and walks you through connecting your console: 10 to 20 minutes, once. New versions install in one click.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="live" aria-labelledby="live-h">
+    <div class="in">
+      <div class="split2">
+        <div class="screen">
+          <video controls muted playsinline preload="none" poster="https://smoovplay.github.io/compare/media/live_gotham_knights.jpg" src="https://smoovplay.github.io/compare/media/live_gotham_knights_90.mp4" aria-label="Gotham Knights played over PS5 Remote Play: the 30 fps stream left of the line, SmoovPlay at 90 fps right of it"></video>
+        </div>
+        <div class="side">
+          <div class="eyebrow">Real play, saved as it happened</div>
+          <h2 id="live-h">Gotham Knights on a PS5, at 90 fps</h2>
+          <p>A minute of real play over PS5 Remote Play, saved by SmoovPlay's own before &amp; after replay. Gotham Knights runs at 30 fps on PS5: left of the line is the game's own 30 fps, right of it is SmoovPlay at 90 fps.</p>
+          <div class="facts" aria-label="This clip"><span>RTX 4070 Ti SUPER</span><span>1080p30 in</span><span class="on">90 fps out</span><span>About 35 ms behind</span></div>
+          <p>Best on a screen at 90 Hz or more, with the sound on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" aria-labelledby="clips-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">See it at full frame rate</div>
+        <h2 id="clips-h">Six clips, split, side by side or flipped</h2>
+        <p>Most social sites play video at 60 fps or less, which hides the difference. The comparison page plays the 30 fps stream and SmoovPlay at their real frame rates, so you can flip between them on the same moment.</p>
+      </div>
+      <div class="strip">
+        <a href="https://smoovplay.github.io/compare/"><img src="https://smoovplay.github.io/compare/media/thumb_main.jpg" alt="" width="480" height="270" loading="lazy" decoding="async">Drive and chase</a>
+        <a href="https://smoovplay.github.io/compare/"><img src="https://smoovplay.github.io/compare/media/thumb_masks.jpg" alt="" width="480" height="270" loading="lazy" decoding="async">Masks on</a>
+        <a href="https://smoovplay.github.io/compare/"><img src="https://smoovplay.github.io/compare/media/thumb_bike.jpg" alt="" width="480" height="270" loading="lazy" decoding="async">Bike ride</a>
+        <a href="https://smoovplay.github.io/compare/"><img src="https://smoovplay.github.io/compare/media/thumb_downtown.jpg" alt="" width="480" height="270" loading="lazy" decoding="async">Downtown drive</a>
+        <a href="https://smoovplay.github.io/compare/"><img src="https://smoovplay.github.io/compare/media/thumb_runway.jpg" alt="" width="480" height="270" loading="lazy" decoding="async">Night runway</a>
+        <a href="https://smoovplay.github.io/compare/"><img src="https://smoovplay.github.io/compare/media/thumb_hideout.jpg" alt="" width="480" height="270" loading="lazy" decoding="async">Hideout firefight</a>
+      </div>
+      <a class="more" href="https://smoovplay.github.io/compare/">Open the comparison player →</a>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="works-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">Works with</div>
+        <h2 id="works-h">Tested on a PS5 and an RTX card, with more to try</h2>
+        <p>Experimental options work in testing with stand-ins for the real hardware. If you have one, your report helps the most.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">With</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">PS5, over Remote Play</th><td><span class="ok">Tested</span>The recommended way.</td></tr>
+            <tr><th scope="row">NVIDIA GeForce RTX 30, 40 and 50 series</th><td><span class="ok">Tested</span>On an RTX 4070 Ti SUPER. RTX 20 cards and laptops aren't tested yet.</td></tr>
+            <tr><th scope="row">Xbox and other streaming apps, by capturing the app's window</th><td><span class="xp">Experimental</span>Tested with a stand-in window, not the Xbox app yet.</td></tr>
+            <tr><th scope="row">Any console over HDMI, through a capture card</th><td><span class="xp">Experimental</span>Tested with recordings standing in for a card.</td></tr>
+            <tr><th scope="row">HDR from a PS5</th><td><span class="xp">Experimental</span>Tested with a stand-in HDR stream, not a real PS5 yet.</td></tr>
+            <tr><th scope="row">AMD Radeon and Intel Arc, through DirectML</th><td><span class="xp">Experimental</span>The same frames, about 1.7× more slowly. Not on a real card yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" aria-labelledby="know-h">
+    <div class="in">
+      <div class="head">
+        <div class="eyebrow">Good to know</div>
+        <h2 id="know-h">Smoother, not faster</h2>
+      </div>
+      <ul class="notes">
+        <li><b>A little delay</b>About 36 ms at 90 fps, or 20 ms at 60, on top of Remote Play's own. Great for driving, exploring and story games; not for competitive online play.</li>
+        <li><b>Made for 30 fps games</b>60 fps games pass through unchanged, and games between 40 and 60 fps can be evened out (Experimental).</li>
+        <li><b>1080p in, sharpened out</b>Remote Play arrives at 1080p, so the picture is a little softer than HDMI straight from the console.</li>
+      </ul>
+      <a class="more" href="how-it-works/">How it works, and the FAQ →</a>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="try-h">
+    <div class="in">
+      <div class="call">
+        <div class="eyebrow">Try it now</div>
+        <h2 id="try-h">Play your next 30&nbsp;fps game at 60, 90 or up to 120&nbsp;fps</h2>
+        <p>Free for Windows 10 and 11. Setup takes 10 to 20 minutes, never asks for admin rights, and walks you through connecting your console.</p>
+        <div class="ctas">
+          <a class="get" data-get href="https://github.com/smoovplay/smoovplay/releases/latest/download/SmoovPlay-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>Try it now, free</a>
+          <a class="ghost" href="how-it-works/#get-started">See what you need</a>
+        </div>
+        <p class="meta"><span data-version>Latest version</span><span class="dot">·</span><a href="https://github.com/smoovplay/smoovplay/releases/latest">What's new</a><span class="dot">·</span><a href="how-it-works/#smartscreen">Windows warns you first: here's why</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="next" id="next" role="status" hidden>
+  <b>Your download is starting</b>
+  <p>Run <code>SmoovPlay-Setup.exe</code>. It isn't code-signed yet, so Windows may say "Windows protected your PC": click <strong>More info</strong>, then <strong>Run anyway</strong>. <a href="how-it-works/#smartscreen">More on this</a></p>
+  <button type="button" class="x" aria-label="Close">✕</button>
+</div>
+
+<footer class="foot">
+  <div class="in">
+    <nav class="links" aria-label="More">
+      <a href="how-it-works/">How it works</a>
+      <a href="how-it-works/#faq">FAQ</a>
+      <a href="https://smoovplay.github.io/compare/">Comparisons</a>
+      <a href="https://github.com/smoovplay/smoovplay">Source code</a>
+      <a href="https://github.com/smoovplay/smoovplay/releases">Releases</a>
+      <a href="https://github.com/smoovplay/smoovplay/issues">Report a problem</a>
+    </nav>
+    <p>Clips: Rockstar Games' published GTA VI gameplay (An Extended Look), run through SmoovPlay as a simulated 1080p30 Remote Play stream. Demonstration only; nothing here is monetized. Grand Theft Auto VI © Rockstar Games. Gotham Knights, played by the SmoovPlay developer on their own PS5: © Warner Bros. Games; Batgirl and all related characters © &amp; ™ DC.</p>
+    <p>SmoovPlay is an independent, free and open-source project (MIT licence), not affiliated with or endorsed by Rockstar Games, Warner Bros. Games, DC, Sony, Microsoft, NVIDIA, AMD or Intel. Their names are used only to say what SmoovPlay works with.</p>
+  </div>
+</footer>
+</body>
+</html>

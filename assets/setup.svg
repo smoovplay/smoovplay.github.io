@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24 -24 1148 848" width="1148" height="848">
+<title>Desk setup: PS5, router, PC and screen, and what happens inside the PC</title>
+<style>
+.t { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #F3EFE8; }
+.s { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #8E949F; }
+.m { font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace; fill: #8E949F; letter-spacing: 0.06em; }
+.halo text { paint-order: stroke; stroke: #161A21; stroke-width: 6px; stroke-linejoin: round; }
+</style>
+<rect x="-23.5" y="-23.5" width="1147" height="847" rx="20" fill="#161A21" stroke="#252B35"/>
+          <defs>
+            <linearGradient id="phy-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2b1d5c"/><stop offset="0.6" stop-color="#c2477a"/><stop offset="1" stop-color="#f39a4c"/>
+            </linearGradient>
+            <marker id="pm-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#AEB4BE"/></marker>
+            <marker id="pm-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#FFB02E"/></marker>
+            <marker id="pm-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0L10,5L0,10z" fill="#6E7682"/></marker>
+            <marker id="pm-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#AEB4BE"/></marker>
+          </defs>
+
+          <!-- zoom from the PC into the panel below -->
+          <polygon points="900,540 1010,540 1090,604 10,604" fill="#FFB02E" fill-opacity="0.05"/>
+          <line x1="900" y1="540" x2="10" y2="604" stroke="#FFB02E" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+          <line x1="1010" y1="540" x2="1090" y2="604" stroke="#FFB02E" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+          <text class="m" x="560" y="592" font-size="12" text-anchor="middle">INSIDE THE PC</text>
+
+          <!-- desk and floor -->
+          <line x1="10" y1="540" x2="1090" y2="540" stroke="#3A4250" stroke-width="2"/>
+          <rect x="20" y="380" width="1060" height="12" rx="2" fill="#2C333E"/>
+          <rect x="32" y="392" width="12" height="148" fill="#2C333E"/>
+          <rect x="1056" y="392" width="12" height="148" fill="#2C333E"/>
+
+          <!-- screen -->
+          <text class="t" x="570" y="34" font-size="16" font-weight="700" text-anchor="middle">Your screen</text>
+          <text class="s" x="570" y="53" font-size="12.5" text-anchor="middle">60, 90 or 120 fps, to match its refresh rate</text>
+          <rect x="340" y="68" width="460" height="264" rx="10" fill="#1D222B" stroke="#4A5260"/>
+          <rect x="346" y="74" width="448" height="252" fill="url(#phy-sky)"/>
+          <circle cx="570" cy="238" r="46" fill="#ffd27a"/>
+          <g fill="#241640">
+            <rect x="356" y="224" width="18" height="52"/><rect x="376" y="196" width="14" height="80"/><rect x="392" y="230" width="22" height="46"/>
+            <rect x="418" y="176" width="16" height="100"/><rect x="436" y="212" width="20" height="64"/><rect x="458" y="238" width="14" height="38"/><rect x="474" y="220" width="18" height="56"/>
+            <rect x="646" y="232" width="16" height="44"/><rect x="664" y="188" width="24" height="88"/><rect x="690" y="218" width="14" height="58"/>
+            <rect x="706" y="166" width="18" height="110"/><rect x="726" y="206" width="20" height="70"/><rect x="748" y="228" width="16" height="48"/><rect x="766" y="240" width="18" height="36"/>
+          </g>
+          <rect x="346" y="276" width="448" height="50" fill="#1d1236"/>
+          <g stroke="#ffd27a" stroke-width="2.4" stroke-linecap="round" opacity="0.55">
+            <line x1="536" y1="288" x2="604" y2="288"/><line x1="546" y1="300" x2="594" y2="300"/><line x1="556" y1="314" x2="584" y2="314"/>
+          </g>
+          <g fill="none" stroke="#120b22" stroke-linecap="round">
+            <path d="M380,326 Q384,290 394,262" stroke-width="4.5"/>
+            <path d="M394,262 q-18,-6 -32,4 M394,262 q-12,-16 -30,-16 M394,262 q14,-14 32,-9 M394,262 q18,0 27,14" stroke-width="3.2"/>
+            <path d="M760,326 Q756,290 746,262" stroke-width="4.5"/>
+            <path d="M746,262 q18,-6 32,4 M746,262 q12,-16 30,-16 M746,262 q-14,-14 -32,-9 M746,262 q-18,0 -27,14" stroke-width="3.2"/>
+          </g>
+          <rect x="488" y="86" width="164" height="24" rx="12" fill="#000" fill-opacity="0.55"/>
+          <text x="570" y="102.5" font-size="12" font-weight="600" text-anchor="middle" fill="#FFCB5C" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">SmoovPlay · 90 fps</text>
+          <rect x="556" y="332" width="28" height="34" fill="#2C333E"/>
+          <rect x="506" y="366" width="128" height="14" rx="3" fill="#2C333E"/>
+          <rect x="385" y="332" width="14" height="7" rx="1" fill="#6E7682"/>
+          <rect x="753" y="332" width="14" height="7" rx="1" fill="#FFB02E"/>
+
+          <!-- PS5 -->
+          <text class="t" x="130" y="118" font-size="16" font-weight="700" text-anchor="middle">PS5</text>
+          <text class="s" x="130" y="136" font-size="12.5" text-anchor="middle">runs the game at 30 fps</text>
+          <rect x="122" y="150" width="16" height="230" fill="#11141A"/>
+          <path d="M122,146 C108,150 100,172 100,204 L103,372 Q103,380 111,380 L122,380 Z" fill="#E9ECF1"/>
+          <path d="M138,146 C152,150 160,172 160,204 L157,372 Q157,380 149,380 L138,380 Z" fill="#E9ECF1"/>
+
+          <!-- controller on the desk -->
+          <text class="t" x="896" y="334" font-size="14" font-weight="600" text-anchor="middle">Controller</text>
+          <text class="s" x="896" y="350" font-size="12" text-anchor="middle">USB or Bluetooth</text>
+          <g transform="translate(830,-2)">
+            <path d="M42,363 H88 Q99,363 100,373 Q101,381 93,380 L84,375 H46 L37,380 Q29,381 30,373 Q31,363 42,363 Z" fill="#E9ECF1"/>
+            <rect x="55" y="365" width="20" height="6" rx="2" fill="#2C333E"/>
+          </g>
+          <path d="M934,368 Q1004,370 1000,404" fill="none" stroke="#AEB4BE" stroke-width="1.6" stroke-dasharray="2 5" stroke-linecap="round"/>
+
+          <!-- router on the floor -->
+          <text class="t" x="265" y="482" font-size="14" font-weight="600" text-anchor="middle">Router</text>
+          <line x1="234" y1="510" x2="228" y2="492" stroke="#4A5260" stroke-width="3" stroke-linecap="round"/>
+          <line x1="296" y1="510" x2="302" y2="492" stroke="#4A5260" stroke-width="3" stroke-linecap="round"/>
+          <rect x="220" y="510" width="90" height="30" rx="4" fill="#232933" stroke="#3A4250"/>
+          <circle cx="238" cy="525" r="2.5" fill="#7FD49B"/><circle cx="250" cy="525" r="2.5" fill="#7FD49B"/><circle cx="262" cy="525" r="2.5" fill="#7FD49B"/>
+
+          <!-- PC under the desk -->
+          <text class="t" x="884" y="428" font-size="16" font-weight="700" text-anchor="end">Your PC</text>
+          <text class="s" x="884" y="446" font-size="12.5" text-anchor="end">NVIDIA RTX card</text>
+          <rect x="900" y="404" width="110" height="136" rx="6" fill="#1D222B" stroke="#4A5260"/>
+          <circle cx="996" cy="416" r="3.5" fill="#FFB02E"/>
+          <rect x="908" y="452" width="94" height="34" rx="3" fill="#FFB02E" fill-opacity="0.14" stroke="#FFB02E" stroke-opacity="0.8"/>
+          <text x="955" y="474" font-size="12" font-weight="700" text-anchor="middle" fill="#FFB02E" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace">RTX</text>
+          <g stroke="#3A4250" stroke-width="2"><line x1="916" y1="504" x2="994" y2="504"/><line x1="916" y1="512" x2="994" y2="512"/><line x1="916" y1="520" x2="994" y2="520"/></g>
+
+          <!-- cables -->
+          <path d="M162,356 H392 V346" fill="none" stroke="#6E7682" stroke-width="2.4" stroke-dasharray="6 6" stroke-linecap="round" marker-end="url(#pm-m)"/>
+          <path d="M162,370 H184 V525 H212" fill="none" stroke="#AEB4BE" stroke-width="3" stroke-linejoin="round" marker-start="url(#pm-n)" marker-end="url(#pm-n)"/>
+          <path d="M318,525 H892" fill="none" stroke="#AEB4BE" stroke-width="3" marker-start="url(#pm-n)" marker-end="url(#pm-n)"/>
+          <path d="M904,469 H760 V346" fill="none" stroke="#FFB02E" stroke-width="3.4" stroke-linejoin="round" marker-end="url(#pm-a)"/>
+
+          <g class="halo">
+            <text class="s" x="277" y="350" font-size="12" text-anchor="middle">HDMI · play direct any time</text>
+            <text class="s" x="196" y="452" font-size="12">Ethernet</text>
+            <text class="s" x="600" y="516" font-size="12.5" text-anchor="middle">Ethernet or 5 GHz Wi-Fi · the Remote Play stream in, your button presses out</text>
+            <text x="750" y="424" font-size="12.5" font-weight="600" text-anchor="end" fill="#FFB02E" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">DisplayPort · 60, 90 or 120 fps</text>
+          </g>
+
+          <!-- inside the PC -->
+          <rect x="10" y="604" width="1080" height="188" rx="16" fill="#12151B" stroke="#FFB02E" stroke-opacity="0.35"/>
+
+          <rect x="38" y="640" width="140" height="96" rx="10" fill="#1D222B" stroke="#3A4250"/>
+          <text class="t" x="52" y="666" font-size="14" font-weight="700">Network port</text>
+          <text class="s" x="52" y="687" font-size="12">the stream arrives,</text>
+          <text class="s" x="52" y="703" font-size="12">30 new frames</text>
+          <text class="s" x="52" y="719" font-size="12">a second</text>
+
+          <line x1="180" y1="688" x2="202" y2="688" stroke="#AEB4BE" stroke-width="1.6" marker-end="url(#pm-s)"/>
+
+          <rect x="206" y="640" width="160" height="96" rx="10" fill="#1D222B" stroke="#3A4250"/>
+          <text class="t" x="220" y="666" font-size="14" font-weight="700">chiaki-ng</text>
+          <text class="m" x="352" y="666" font-size="10.5" text-anchor="end">CPU</text>
+          <text class="s" x="220" y="687" font-size="12">unpacks the stream,</text>
+          <text class="s" x="220" y="703" font-size="12">plays the sound,</text>
+          <text class="s" x="220" y="719" font-size="12">sends your buttons</text>
+
+          <line x1="368" y1="688" x2="390" y2="688" stroke="#AEB4BE" stroke-width="1.6" marker-end="url(#pm-s)"/>
+
+          <rect x="394" y="616" width="498" height="136" rx="12" fill="#FFB02E" fill-opacity="0.06" stroke="#FFB02E" stroke-opacity="0.7"/>
+          <text x="408" y="633" font-size="11" font-weight="600" fill="#FFB02E" letter-spacing="0.08em" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, Menlo, monospace">GRAPHICS CARD · SMOOVPLAY</text>
+
+          <rect x="406" y="642" width="150" height="96" rx="10" fill="#1D222B" stroke="#3A4250"/>
+          <text class="t" x="420" y="668" font-size="14" font-weight="700">Video decoder</text>
+          <text class="s" x="420" y="689" font-size="12">unpacks each frame,</text>
+          <text class="s" x="420" y="705" font-size="12">skips the repeats</text>
+          <text class="m" x="420" y="726" font-size="10.5">NVDEC</text>
+
+          <line x1="557" y1="690" x2="566" y2="690" stroke="#AEB4BE" stroke-width="1.6" marker-end="url(#pm-s)"/>
+
+          <rect x="568" y="642" width="150" height="96" rx="10" fill="#2A2216" stroke="#FFB02E"/>
+          <text x="582" y="668" font-size="14" font-weight="700" fill="#FFB02E" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">AI cores</text>
+          <text class="s" x="582" y="689" font-size="12">draw 1 to 3 in-between</text>
+          <text class="s" x="582" y="705" font-size="12">frames, ~9 ms each</text>
+          <text class="m" x="582" y="726" font-size="10.5">RIFE · TENSORRT</text>
+
+          <line x1="719" y1="690" x2="728" y2="690" stroke="#AEB4BE" stroke-width="1.6" marker-end="url(#pm-s)"/>
+
+          <rect x="730" y="642" width="150" height="96" rx="10" fill="#1D222B" stroke="#3A4250"/>
+          <text class="t" x="744" y="668" font-size="14" font-weight="700">Shader cores</text>
+          <text class="s" x="744" y="689" font-size="12">fit the picture to</text>
+          <text class="s" x="744" y="705" font-size="12">your screen, 0.1 ms</text>
+          <text class="m" x="744" y="726" font-size="10.5">AMD FSR 1</text>
+
+          <line x1="894" y1="688" x2="916" y2="688" stroke="#FFB02E" stroke-width="2" marker-end="url(#pm-a)"/>
+
+          <rect x="920" y="640" width="140" height="96" rx="10" fill="#1D222B" stroke="#3A4250"/>
+          <text class="t" x="934" y="666" font-size="14" font-weight="700">Display out</text>
+          <text class="s" x="934" y="687" font-size="12">a frame every</text>
+          <text class="s" x="934" y="703" font-size="12">16.7, 11.1 or 8.3 ms</text>
+          <text class="s" x="934" y="719" font-size="12">at 60, 90 or 120 fps</text>
+
+          <text class="m" x="550" y="778" font-size="11.5" text-anchor="middle">ABOUT 36 MS FROM A FRAME ARRIVING TO IT ON SCREEN · MEASURED AT 90 FPS ON AN RTX 4070 TI SUPER</text>
+        </svg>
